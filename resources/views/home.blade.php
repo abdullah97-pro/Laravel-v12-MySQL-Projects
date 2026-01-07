@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Home Page</h1>
+
+    <a href="{{ route('layoutHome') }}">Home 2</a>
+
 </body>
 </html>

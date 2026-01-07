@@ -9,7 +9,7 @@
 <body>
     <h1>Home</h1>
 
-    
+    <a href="{{ url('home') }}">Home 1</a>
 
 </body>
 </html>

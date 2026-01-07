@@ -55,25 +55,33 @@ use Illuminate\Support\Facades\Route;
 //     });
 // });
 
+Route::get('/layout/home/', function() {
+    return view('layout.homepage');
+})->name('layoutHome');
+
 Route::get('/home', function() {
-    return view('layout.home');
-});
+    return view('home');
+})->name('home');
 
-Route::middleware('/auth/')->group(function() {
+// Route::middleware('/auth/')->group(function() {
 
-    Route::get('/user/{id}', function($id) {
-        return "User ID ".$id." Welcome";
-    });
+//     Route::get('/user/{id}', function($id) {
+//         return "User ID ".$id." Welcome";
+//     });
 
-    Route::get('/user/{name}', function($name) {
-        return "User ".$name." Welcome";
-    });
+//     Route::get('/user/{name}', function($name) {
+//         return "User ".$name." Welcome";
+//     });
 
-    Route::get('/order/{orderId}/product/{productId}', function($orderId,$productId) {
-        return "Order $orderId with Product $productId is availble";
-    });
+//     Route::get('/order/{orderId}/product/{productId}', function($orderId,$productId) {
+//         return "Order $orderId with Product $productId is availble";
+//     });
 
-    Route::get('/category/{name?}', function($name='All') {
-        return "Discount on $name category";
-    });
+//     Route::get('/category/{name?}', function($name='All') {
+//         return "Discount on $name category";
+//     });
+// });
+
+Route::get('/users/{user}', function (User $user) {
+    return $user->name;
 });
