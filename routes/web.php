@@ -33,10 +33,33 @@ use Illuminate\Support\Facades\Route;
 //     return "Discount on $name category";
 // });
 
-Route::prefix('/customer/')->group(function() {
-    Route::get('/home', function() {
-        return "Welcome to home page";
-    });
+// Route::prefix('/customer/')->group(function() {
+//     Route::get('/home', function() {
+//         return "Welcome to home page";
+//     });
+
+//     Route::get('/user/{id}', function($id) {
+//         return "User ID ".$id." Welcome";
+//     });
+
+//     Route::get('/user/{name}', function($name) {
+//         return "User ".$name." Welcome";
+//     });
+
+//     Route::get('/order/{orderId}/product/{productId}', function($orderId,$productId) {
+//         return "Order $orderId with Product $productId is availble";
+//     });
+
+//     Route::get('/category/{name?}', function($name='All') {
+//         return "Discount on $name category";
+//     });
+// });
+
+Route::get('/home', function() {
+    return view('layout.home');
+});
+
+Route::middleware('/auth/')->group(function() {
 
     Route::get('/user/{id}', function($id) {
         return "User ID ".$id." Welcome";
