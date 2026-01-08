@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\User\ProductController;
 
 // Route::get('/', function () {
 //     // return view('welcome');
@@ -55,13 +57,13 @@ use Illuminate\Support\Facades\Route;
 //     });
 // });
 
-Route::get('/layout/home/', function() {
-    return view('layout.homepage');
-})->name('layoutHome');
+// Route::get('/layout/home/', function() {
+//     return view('layout.homepage');
+// })->name('layoutHome');
 
-Route::get('/home', function() {
-    return view('home');
-})->name('home');
+// Route::get('/home', function() {
+//     return view('home');
+// })->name('home');
 
 // Route::middleware('/auth/')->group(function() {
 
@@ -82,6 +84,9 @@ Route::get('/home', function() {
 //     });
 // });
 
-Route::get('/users/{user}', function (User $user) {
-    return $user->name;
-});
+// Route::get('/users/{user}', function (User $user) {
+//     return $user->name;
+// });
+
+Route::get('users',[UserController::class, 'Home']);
+Route::get('product',[ProductController::class, 'index']);
