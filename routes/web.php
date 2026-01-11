@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\User\ProductController;
 
 // Route::get('/', function () {
@@ -90,3 +91,5 @@ use App\Http\Controllers\User\ProductController;
 
 Route::get('users',[UserController::class, 'Home']);
 Route::get('product',[ProductController::class, 'index']);
+
+Route::resource('orders', OrderController::class);
