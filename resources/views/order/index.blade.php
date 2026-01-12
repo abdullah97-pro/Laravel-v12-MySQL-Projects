@@ -8,8 +8,12 @@
 </head>
 <body>
     
-    <h1>{{ $name }}</h1>
-    <h1>{{ $company }}</h1>
+    {{-- <h1>{{ $name }}</h1>
+    <h1>{{ $company }}</h1> --}}
+
+    @foreach ($names as $name)
+        <h1>{{ $name }}</h1>
+    @endforeach
 
 </body>
 </html>

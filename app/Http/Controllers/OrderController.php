@@ -12,10 +12,12 @@ class OrderController extends Controller
     public function index()
     {
         //
-        $name = "Abdullah Ahmadi";
-        $company = "Fanaven Technology";
+        // $name = "Abdullah Ahmadi";
+        // $company = "Fanaven Technology";
 
-        return view('order.index',compact('name','company'));
+        $names = ["RAM","CPU","RTX 5090","Gaming Keyboard","Monitor"];
+
+        return view('order.index',['names' => $names]);
     }
 
     /**
