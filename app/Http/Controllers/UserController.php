@@ -30,7 +30,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:32'
+        ]);
+
+        return "Success";
     }
 
     /**
