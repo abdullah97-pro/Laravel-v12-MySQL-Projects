@@ -89,7 +89,7 @@ use App\Http\Controllers\User\ProductController;
 //     return $user->name;
 // });
 
-// Route::get('users',[UserController::class, 'Home']);
+// Route::get('users',[UserController::class, 'Home']); 
 Route::get('product',[ProductController::class, 'index']);
 
 Route::resource('orders', OrderController::class);
